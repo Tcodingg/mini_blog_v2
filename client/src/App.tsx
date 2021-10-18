@@ -1,5 +1,11 @@
+import MiniBlog from "./components/MiniBlog/MiniBlog";
+
 const App = () => {
-   return <div>app</div>;
+   return (
+      <div>
+         <MiniBlog />
+      </div>
+   );
 };
 
 export default App;
