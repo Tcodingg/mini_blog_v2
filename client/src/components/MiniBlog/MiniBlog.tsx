@@ -3,9 +3,9 @@ import Form from "../Form/Form";
 
 const MiniBlog: React.FC = () => {
    return (
-      <div className="mini-blog">
+      <section className="mini-blog">
          <Form />
-      </div>
+      </section>
    );
 };
 

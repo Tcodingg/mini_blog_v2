@@ -10,6 +10,10 @@ const Form: React.FC = () => {
    });
 
    // console.log(postData);
+
+   function submitPost() {
+      console.log(postData);
+   }
    return (
       <div className="form-container">
          <h5 className="title">share you blog</h5>
@@ -40,6 +44,8 @@ const Form: React.FC = () => {
                value={postData.note}
             />
          </div>
+
+         <button onClick={submitPost}>Post</button>
       </div>
    );
 };
