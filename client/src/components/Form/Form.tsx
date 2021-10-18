@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FileBase64 from "react-file-base64";
+import "./Form.css";
 
 const Form: React.FC = () => {
    const [postData, setPostData] = useState({
@@ -8,7 +9,7 @@ const Form: React.FC = () => {
       image: "",
    });
 
-   console.log(postData);
+   // console.log(postData);
    return (
       <div className="form-container">
          <h5 className="title">share you blog</h5>
