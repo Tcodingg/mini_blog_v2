@@ -43,9 +43,8 @@ const Form: React.FC = () => {
                placeholder="Note..."
                value={postData.note}
             />
+            <button onClick={submitPost}>Post</button>
          </div>
-
-         <button onClick={submitPost}>Post</button>
       </div>
    );
 };
