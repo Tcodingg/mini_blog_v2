@@ -7,11 +7,11 @@ export enum actionTypes {
 
 type actionGetPost = {
    type: actionTypes.GET_POST;
-   payload: posts[];
+   payload: post[];
 };
 
-export interface posts {
-   _id: Number;
+export interface post {
+   _id: string;
    title: string;
    note: string;
    img: string;
@@ -23,7 +23,7 @@ type actionDeletePost = {
 };
 
 type actionCreatePost = {
-   post: posts;
+   newPost: post;
 };
 
 type actionLikePost = {
