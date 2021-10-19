@@ -8,3 +8,7 @@ const postSchema = mongoose.Schema({
       default: 0,
    },
 });
+
+const PostMessage = mongoose.model("PostMessage", postSchema);
+
+module.exports = PostMessage;
