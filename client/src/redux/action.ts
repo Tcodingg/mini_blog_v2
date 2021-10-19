@@ -41,7 +41,9 @@ export const deletePost = (postId: string) => async (dispatch: Dispatch) => {
          type: actionTypes.DELETE_POST,
          payload: postId,
       });
-   } catch (error) {}
+   } catch (error) {
+      console.log(error);
+   }
 };
 // ==== like a post ====
 
