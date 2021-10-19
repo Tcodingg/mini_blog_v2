@@ -5,7 +5,15 @@
    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
    border-radius: 10px;
    margin-bottom: 40px;
+
+   transition: all 0.35s ease-in-out;
+   background-color: transparent;
 }
+
+.posts-container:hover {
+   background-color: rgba(0, 0, 0, 0.03);
+}
+
 .posts-container h5 {
    text-transform: uppercase;
    text-align: center;
@@ -34,6 +42,11 @@
 .icons {
    position: absolute;
    bottom: 0;
+   transition: all 0.3s ease-in-out;
+}
+
+.icons:hover {
+   cursor: pointer;
 }
 
 .delete {
