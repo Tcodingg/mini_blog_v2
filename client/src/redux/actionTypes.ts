@@ -3,6 +3,8 @@ export enum actionTypes {
    DELETE_POST = "DELETE_POST",
    CREATE_POST = "CREATE_POST",
    LIKE_POST = "LIKE_POST",
+   LOADING_POST = "LOADING_POST",
+   ERROR_POST = "ERROR_POST",
 }
 
 export type actionGetPost = {
@@ -33,8 +35,20 @@ export type actionLikePost = {
    payload: post;
 };
 
+type actionLoadingPost = {
+   type: actionTypes.LOADING_POST;
+   payload: boolean;
+};
+
+type actionErrorPost = {
+   type: actionTypes.ERROR_POST;
+   payload: String;
+};
+
 export type Actions =
    | actionGetPost
    | actionDeletePost
    | actionCreatePost
-   | actionLikePost;
+   | actionLikePost
+   | actionLoadingPost
+   | actionErrorPost;
