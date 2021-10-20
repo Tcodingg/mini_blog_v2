@@ -50,7 +50,7 @@ const likePost = async (req, res) => {
 
    const updatedPost = await PostMessage.findByIdAndUpdate(
       id,
-      { likeCount: post.likeCount + 1 },
+      { likes: post.likes + 1 },
       { new: true }
    );
 

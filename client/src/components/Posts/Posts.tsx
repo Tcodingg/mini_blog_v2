@@ -12,6 +12,7 @@ const Posts: React.FC = () => {
    }, [dispatch]);
 
    const posts = useSelector((state: RootState) => state.reducer);
+   console.log(posts);
 
    return (
       <div className="posts">
