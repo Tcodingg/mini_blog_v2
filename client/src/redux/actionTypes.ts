@@ -20,7 +20,7 @@ export interface post {
 
 export type actionDeletePost = {
    type: actionTypes.DELETE_POST;
-   payload: Number;
+   payload: string;
 };
 
 export type actionCreatePost = {
@@ -30,7 +30,7 @@ export type actionCreatePost = {
 
 export type actionLikePost = {
    type: actionTypes.LIKE_POST;
-   payload: Number;
+   payload: post;
 };
 
 export type Actions =

@@ -49,10 +49,10 @@ export const deletePost = (postId: string) => async (dispatch: Dispatch) => {
 
 export const likePost = (postId: string) => async (dispatch: Dispatch) => {
    try {
-      await axios.patch(`${url}/${postId}/likePost`);
+      const { data } = await axios.patch(`${url}/${postId}/likePost`);
       dispatch({
          type: actionTypes.LIKE_POST,
-         payload: postId,
+         payload: data,
       });
    } catch (error) {
       console.log(error);
