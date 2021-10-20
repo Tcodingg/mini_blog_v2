@@ -14,7 +14,10 @@ export const getPost = () => async (dispatch: Dispatch) => {
          payload: data,
       });
    } catch (error) {
-      console.log(error);
+      dispatch({
+         type: actionTypes.ERROR_POST,
+         payload: error,
+      });
    }
 };
 
@@ -27,13 +30,19 @@ type postType = {
 
 export const createPost = (post: postType) => async (dispatch: Dispatch) => {
    try {
+      dispatch({
+         type: actionTypes.LOADING_POST,
+      });
       const { data } = await axios.post(url, { post });
       dispatch({
          type: actionTypes.CREATE_POST,
          payload: data,
       });
    } catch (error) {
-      console.log(error);
+      dispatch({
+         type: actionTypes.ERROR_POST,
+         payload: error,
+      });
    }
 };
 
@@ -47,7 +56,10 @@ export const deletePost = (postId: string) => async (dispatch: Dispatch) => {
          payload: postId,
       });
    } catch (error) {
-      console.log(error);
+      dispatch({
+         type: actionTypes.ERROR_POST,
+         payload: error,
+      });
    }
 };
 // ==== like a post ====
@@ -61,6 +73,9 @@ export const likePost = (postId: string) => async (dispatch: Dispatch) => {
          payload: data,
       });
    } catch (error) {
-      console.log(error);
+      dispatch({
+         type: actionTypes.ERROR_POST,
+         payload: error,
+      });
    }
 };
