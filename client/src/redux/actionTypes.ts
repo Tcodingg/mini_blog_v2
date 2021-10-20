@@ -5,7 +5,7 @@ export enum actionTypes {
    LIKE_POST = "LIKE_POST",
 }
 
-type actionGetPost = {
+export type actionGetPost = {
    type: actionTypes.GET_POST;
    payload: post[];
 };
@@ -18,16 +18,19 @@ export interface post {
    likes: Number;
 }
 
-type actionDeletePost = {
-   postId: Number;
+export type actionDeletePost = {
+   type: actionTypes.DELETE_POST;
+   payload: Number;
 };
 
-type actionCreatePost = {
-   newPost: post;
+export type actionCreatePost = {
+   type: actionTypes.CREATE_POST;
+   payload: post;
 };
 
-type actionLikePost = {
-   postId: Number;
+export type actionLikePost = {
+   type: actionTypes.LIKE_POST;
+   payload: Number;
 };
 
 export type Actions =
