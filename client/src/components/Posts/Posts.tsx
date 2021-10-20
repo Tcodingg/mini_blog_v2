@@ -11,24 +11,40 @@ const Posts: React.FC = () => {
       dispatch(getPost());
    }, [dispatch]);
 
-   const posts = useSelector((state: RootState) => state.reducer);
-   console.log(posts);
+   const { posts, loading } = useSelector((state: RootState) => state.reducer);
+   console.log(loading);
 
    return (
       <div className="posts">
-         {posts.map((post) => {
-            return (
-               <Post
-                  title={post.title}
-                  note={post.note}
-                  likes={post.likes}
-                  img={post.img}
-                  _id={post._id}
-               />
-            );
-         })}
+         {loading
+            ? "loading..."
+            : posts.map((post) => {
+                 return (
+                    <Post
+                       title={post.title}
+                       note={post.note}
+                       likes={post.likes}
+                       img={post.img}
+                       _id={post._id}
+                    />
+                 );
+              })}
       </div>
    );
 };
 
 export default Posts;
+
+// {
+//    posts.map((post) => {
+//       return (
+//          <Post
+//             title={post.title}
+//             note={post.note}
+//             likes={post.likes}
+//             img={post.img}
+//             _id={post._id}
+//          />
+//       );
+//    });
+// }

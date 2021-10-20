@@ -7,6 +7,9 @@ const url = "http://localhost:5000/posts";
 
 // ==== get all posts ====
 export const getPost = () => async (dispatch: Dispatch) => {
+   dispatch({
+      type: actionTypes.LOADING_POST,
+   });
    try {
       const { data } = await axios.get(url);
       dispatch({
@@ -30,9 +33,6 @@ type postType = {
 
 export const createPost = (post: postType) => async (dispatch: Dispatch) => {
    try {
-      dispatch({
-         type: actionTypes.LOADING_POST,
-      });
       const { data } = await axios.post(url, { post });
       dispatch({
          type: actionTypes.CREATE_POST,

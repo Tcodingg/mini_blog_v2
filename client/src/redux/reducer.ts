@@ -26,23 +26,27 @@ const reducer = (
       case actionTypes.GET_POST:
          return {
             ...state,
+            loading: false,
             posts: action.payload,
          };
       case actionTypes.CREATE_POST:
          return {
             ...state,
+            loading: false,
             posts: [...state.posts, action.payload],
          };
 
       case actionTypes.DELETE_POST:
          return {
             ...state,
+            loading: false,
             posts: state.posts.filter((item) => item._id !== action.payload),
          };
 
       case actionTypes.LIKE_POST:
          return {
             ...state,
+            loading: false,
             posts: state.posts.map((item) =>
                item._id === action.payload._id ? action.payload : item
             ),
@@ -51,6 +55,7 @@ const reducer = (
       case actionTypes.ERROR_POST:
          return {
             ...state,
+            loading: false,
             error: action.payload,
          };
 
