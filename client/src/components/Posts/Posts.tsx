@@ -30,15 +30,17 @@ const Posts: React.FC = () => {
                </Box>
             </div>
          ) : (
-            posts.map((post) => {
+            posts.map((post, i) => {
                return (
-                  <Post
-                     title={post.title}
-                     note={post.note}
-                     likes={post.likes}
-                     img={post.img}
-                     _id={post._id}
-                  />
+                  <div key={i}>
+                     <Post
+                        title={post.title}
+                        note={post.note}
+                        likes={post.likes}
+                        img={post.img}
+                        _id={post._id}
+                     />
+                  </div>
                );
             })
          )}

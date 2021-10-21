@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Form from "../Form/Form";
 import Posts from "../Posts/Posts";
 import "./MiniBlog.css";

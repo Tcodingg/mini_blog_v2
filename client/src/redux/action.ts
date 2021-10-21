@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import axios from "axios";
 
-import { actionTypes, post } from "./actionTypes";
+import { actionTypes } from "./actionTypes";
 
 const url = "http://localhost:5000/posts";
 
