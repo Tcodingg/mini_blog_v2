@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "./Posts.css";
 import Post from "../Post/Post";
+import Box from "@mui/material/Box";
+import LinearProgress from "@mui/material/LinearProgress";
 
 import { useDispatch, useSelector } from "react-redux";
 import { getPost } from "../../redux/action";
@@ -12,39 +14,36 @@ const Posts: React.FC = () => {
    }, [dispatch]);
 
    const { posts, loading } = useSelector((state: RootState) => state.reducer);
-   console.log(loading);
-
    return (
       <div className="posts">
-         {loading
-            ? "loading..."
-            : posts.map((post) => {
-                 return (
-                    <Post
-                       title={post.title}
-                       note={post.note}
-                       likes={post.likes}
-                       img={post.img}
-                       _id={post._id}
-                    />
-                 );
-              })}
+         {loading ? (
+            <div
+               style={{
+                  display: "flex",
+                  margin: "0 auto",
+                  alignItems: "center",
+                  width: "300px",
+               }}
+            >
+               <Box sx={{ width: "100%" }}>
+                  <LinearProgress color="inherit" />
+               </Box>
+            </div>
+         ) : (
+            posts.map((post) => {
+               return (
+                  <Post
+                     title={post.title}
+                     note={post.note}
+                     likes={post.likes}
+                     img={post.img}
+                     _id={post._id}
+                  />
+               );
+            })
+         )}
       </div>
    );
 };
 
 export default Posts;
-
-// {
-//    posts.map((post) => {
-//       return (
-//          <Post
-//             title={post.title}
-//             note={post.note}
-//             likes={post.likes}
-//             img={post.img}
-//             _id={post._id}
-//          />
-//       );
-//    });
-// }
