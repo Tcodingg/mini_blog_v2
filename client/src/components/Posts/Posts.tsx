@@ -26,6 +26,7 @@ const Posts: React.FC = () => {
                }}
             >
                <Box sx={{ width: "100%" }}>
+                  <h4>Heroku Backend Server Starting...</h4>
                   <LinearProgress color="inherit" />
                </Box>
             </div>

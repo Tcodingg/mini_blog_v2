@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { actionTypes } from "./actionTypes";
 
-const url = "http://localhost:5000/posts";
+const url = "https://mini-blog-v2.herokuapp.com/posts";
 
 // ==== get all posts ====
 export const getPost = () => async (dispatch: Dispatch) => {
