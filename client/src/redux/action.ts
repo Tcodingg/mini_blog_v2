@@ -66,7 +66,6 @@ export const deletePost = (postId: string) => async (dispatch: Dispatch) => {
 
 export const likePost = (postId: string) => async (dispatch: Dispatch) => {
    try {
-      console.log(postId);
       const { data } = await axios.patch(`${url}/${postId}/likePost`);
       dispatch({
          type: actionTypes.LIKE_POST,
