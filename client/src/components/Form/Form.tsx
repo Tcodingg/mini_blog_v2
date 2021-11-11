@@ -19,12 +19,14 @@ const Form: React.FC = () => {
    const dispatch = useDispatch();
 
    function submitPost() {
-      dispatch(createPost(postData));
-      setPostData({
-         title: "",
-         note: "",
-         img: "",
-      });
+      if (postData.title && postData.note) {
+         dispatch(createPost(postData));
+         setPostData({
+            title: "",
+            note: "",
+            img: "",
+         });
+      }
    }
    return (
       <div className="form-container">
